@@ -6,6 +6,7 @@
 * Nginx
 * Travis CI Integration
 
+
 ### Setup
 1. In the `docker-compose.yml` file in the **app** section under **command** enter your Django project name
 2. In the `.env` file enter your Django project's secret key under **secret key**
