@@ -1,0 +1,29 @@
+language: python
+
+sudo: required
+
+python:
+  - "2.7"
+
+before_install:
+  - cd app/
+
+env:
+  global:
+    - SECRET_KEY="q345v435vq345345v34qv"
+    - DB_NAME=postgres
+    - DB_USER=postgres
+    - DB_PASS=""
+    - DB_HOST=localhost
+    - DB_PORT=""
+
+services:
+  - postgresql
+
+install:
+  - pip install -r requirements.txt
+
+before_script:
+  - psql -c 'create database postgres;' -U postgres
+
+script: python manage.py test
