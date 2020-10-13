@@ -11,7 +11,7 @@ before_install:
 env:
   global:
     - SECRET_KEY="q345v435vq345345v34qv"
-    - DB_NAME=postgres
+    - DB_NAME=postgresdb
     - DB_USER=postgres
     - DB_PASS=""
     - DB_HOST=localhost
@@ -24,6 +24,6 @@ install:
   - pip install -r requirements.txt
 
 before_script:
-  - psql -c 'create database postgres;' -U postgres
+  - psql -c 'create database postgresdb;' -U postgres
 
 script: python manage.py test
